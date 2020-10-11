@@ -21,6 +21,7 @@ const CityForm = ({onAddCity}) => {
                         type='text'
                         id="name"
                         value={enteredCityName}
+                        placeholder="Podaj nazwę miasta"
                         onChange={event => setEnteredCityName(event.target.value)}
                     />
                 </div>
