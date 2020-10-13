@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
-const CityForm = ({onAddCity}) => {
+import './CityForm.scss';
+
+const CityForm = ({addCity}) => {
     const [enteredCityName, setEnteredCityName] = useState('');
 
     const submitHander = event => {
@@ -9,7 +11,7 @@ const CityForm = ({onAddCity}) => {
             alert('Podaj minimum 3 znaki');
             return;
         } 
-        onAddCity({name: enteredCityName});
+        addCity({name: enteredCityName});
         setEnteredCityName('');
     }
 
@@ -21,12 +23,11 @@ const CityForm = ({onAddCity}) => {
                         type='text'
                         id="name"
                         value={enteredCityName}
+                        className="cityForm__input"
                         placeholder="Podaj nazwę miasta"
                         onChange={event => setEnteredCityName(event.target.value)}
                     />
-                </div>
-                <div className="cityForm__actions">
-                    <button type="submit">Dodaj Miasto</button>
+                    <button type="submit" className="cityForm__submit">Dodaj miasto</button>
                 </div>
             </form>
         </section>

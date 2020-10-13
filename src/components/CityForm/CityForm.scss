@@ -1,0 +1,23 @@
+.cityForm {
+    margin-bottom: 30px;
+}
+.cityForm__input {
+    height:38px;
+    line-height: 38px;
+    padding: 3px 5px;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.cityForm__submit {
+    background: #009933;
+    border-radius: 5px;
+    height: 38px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.cityForm__submit:hover {
+    background-color: #00cc44;
+}

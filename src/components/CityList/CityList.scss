@@ -1,0 +1,32 @@
+$list-color: #efefef;
+
+.cityList {
+    padding: 20px 0;
+    border-top: 1px solid $list-color;
+}
+.cityList__items {
+    list-style-type: none;
+    padding: 0;
+}
+.cityList__item {
+    position: relative;
+    border-bottom: 1px solid $list-color;
+    margin-bottom: 5px;
+}
+.cityList__item:hover {
+    border-color: #009933;
+}
+.cityList__name {
+    width: calc(100% - 30px);
+    padding: 5px;
+    cursor: pointer;
+}
+.cityList__removeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    border: 1px solid $list-color;
+}

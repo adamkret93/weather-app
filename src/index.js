@@ -1,12 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from "redux-saga";
+import { watchWeather } from './store/sagas';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import weatherReducer from './store/reducers/weather';
+
+const composeEnhancers =
+  process.env.NODE_ENV === "development"
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : null || compose;
+
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  weatherReducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
+
+sagaMiddleware.run(watchWeather);
+
+//const store = createStore(weatherReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
