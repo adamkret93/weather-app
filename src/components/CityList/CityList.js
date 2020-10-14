@@ -3,9 +3,11 @@ import React from 'react';
 import './CityList.scss';
 
 const CityList = ({cities, selectCity, onRemoveCity}) => {
+    console.log(cities.length);
     return (
         <section className="cityList">
             <header><h3>Lista twoich miast:</h3></header>
+            {cities.length ? 
             <ul className="cityList__items">
                 {cities.map( city => {
                     return(
@@ -16,6 +18,7 @@ const CityList = ({cities, selectCity, onRemoveCity}) => {
                     );
                 })}
             </ul>
+            : 'Brak miast na liście' }
         </section>
     );
 }
