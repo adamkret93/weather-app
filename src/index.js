@@ -24,8 +24,6 @@ const store = createStore(
 
 sagaMiddleware.run(watchWeather);
 
-//const store = createStore(weatherReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
